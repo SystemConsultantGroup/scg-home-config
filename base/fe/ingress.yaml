@@ -1,23 +1,26 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: fe-ingress
+  name: scg-ingress
   annotations:
-    kubernetes.io/ingress.class: 'nginx'
-    cert-manager.io/cluster-issuer: 'letsencrypt-clusterissuer'
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  tls:
-    - hosts:
-        - blabla.scg.skku.ac.kr
-      secretName: gitops-tls
+  ingressClassName: nginx
   rules:
-    - host: blabla.scg.skku.ac.kr
-      http:
-        paths:
-          - backend:
-              service:
-                name: fe-service
-                port:
-                  number: 80
-            path: /
-            pathType: Prefix
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: scg-frontend-svc
+            port:
+              number: 8000
+
+      - path: /api/v2
+        pathType: Prefix
+        backend:
+          service:
+            name: scg-be-v2-svc
+            port:
+              number: 9002

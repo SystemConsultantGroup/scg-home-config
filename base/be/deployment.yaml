@@ -1,22 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: be-deployment
+  name: scg-backend
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/name: be
-  replicas: 1
+      app: scg-be
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: be
+        app: scg-be
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
-        - image: harbor.k8s.scg.skku.ac.kr/library/nginx
-          imagePullPolicy: Always
-          name: be
-          ports:
-            - containerPort: 8000
+      - name: be-v2-container
+        image: scg-be:1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: TZ
+          value: "Asia/Seoul"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scg-be
+spec:
+  selector:
+    app: scg-be
+  ports:
+  - protocol: TCP
+    port: 9002
+    targetPort: 8000
+  type: NodePort
