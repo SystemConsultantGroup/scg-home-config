@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: be-v2-container
-        image: scg-be:1
-        imagePullPolicy: IfNotPresent
+        image: scg-be-v2:2
+        imagePullPolicy: Never
         ports:
         - containerPort: 8000
         env:
