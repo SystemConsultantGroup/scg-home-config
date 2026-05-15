@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: scg-backend
+  name: scg-backend-v2
+  namespace: default
 spec:
   replicas: 1
   selector:
