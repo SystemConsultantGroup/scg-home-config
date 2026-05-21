@@ -5,7 +5,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: api.scg.skku.ac.kr
+  - host: be.scg.skku.ac.kr
     http:
       paths:
       - path: /
@@ -17,5 +17,5 @@ spec:
               number: 9002
   tls: 
     - hosts:
-      - api.scg.skku.ac.kr
+      - be.scg.skku.ac.kr
       secretName: gitops-tls
