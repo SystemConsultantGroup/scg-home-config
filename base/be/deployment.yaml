@@ -24,6 +24,8 @@ spec:
           value: "production"
         - name: TZ
           value: "Asia/Seoul"
+        - name: MINIO_ENDPOINT
+          value: "api.minio.scg.skku.ac.kr"
 ---
 apiVersion: v1
 kind: Service
