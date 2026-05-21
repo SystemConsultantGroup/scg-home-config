@@ -14,7 +14,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: scg-be-v2-svc
+            name: scg-be
             port:
               number: 9002
   tls: 
