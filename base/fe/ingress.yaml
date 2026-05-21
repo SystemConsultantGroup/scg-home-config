@@ -7,19 +7,19 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: api.scg.skku.ac.kr
+  - host: scg.skku.ac.kr
   - http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: scg-be-v2-svc
+            name: scg-frontend-svc
             port:
-              number: 9002
+              number: 8000
   tls: 
     - hosts:
-      - api.scg.skku.ac.kr
+      - scg.skku.ac.kr
       secretName: gitops-tls
 status:
   loadBalancer:
