@@ -22,4 +22,4 @@ spec:
   tls: 
     - hosts:
       - be.scg.skku.ac.kr
-      secretName: gitops-tls
+      secretName: gitops-be-tls
