@@ -16,7 +16,7 @@ spec:
       containers:
       - name: be-v2-container
         image: scgskku/scg-home-be-prod
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
         env:
