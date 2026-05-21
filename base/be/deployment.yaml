@@ -24,16 +24,3 @@ spec:
           value: "production"
         - name: TZ
           value: "Asia/Seoul"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: scg-be
-spec:
-  selector:
-    app: scg-be
-  ports:
-  - protocol: TCP
-    port: 9002
-    targetPort: 8000
-  type: NodePort
