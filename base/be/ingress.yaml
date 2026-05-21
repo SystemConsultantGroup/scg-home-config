@@ -19,3 +19,6 @@ spec:
     - hosts:
       - api.scg.skku.ac.kr
       secretName: gitops-tls
+status:
+  LoadBalancer:
+    - ip: 115.145.150.214
