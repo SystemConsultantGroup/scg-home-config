@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: be-v2-container
-        image: docker.io/library/scg-be-v2:2
+        image: scgskku/scg-home-be-prod
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
