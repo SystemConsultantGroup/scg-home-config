@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: scg-ingress-fe
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-clusterissuer"
 spec:
   ingressClassName: nginx
   rules:
