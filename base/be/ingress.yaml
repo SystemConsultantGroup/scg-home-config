@@ -4,7 +4,7 @@ metadata:
   name: scg-ingress-be
   annotations:
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-origin: "https://fe.scg.skku.ac.kr"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://scg.skku.ac.kr"
     cert-manager.io/cluster-issuer: "letsencrypt-clusterissuer"
 spec:
   ingressClassName: nginx
