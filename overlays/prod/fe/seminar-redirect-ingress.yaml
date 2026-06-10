@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: seminar-redirect-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/permanent-redirect: "https://seminar.scg.skku.ac.kr"
+    nginx.ingress.kubernetes.io/permanent-redirect-code: "308"
+spec:
+  rules:
+    - host: scg.skku.ac.kr
+      http:
+        paths:
+          - path: /seminar
+            pathType: Prefix
+            backend:
+              service:
+                name: fe-service
+                port:
+                  number: 80
