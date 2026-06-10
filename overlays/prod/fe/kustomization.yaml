@@ -8,6 +8,7 @@ patchesStrategicMerge:
   - service.yaml
 resources:
   - ../../../base/fe
+  - seminar-redirect-ingress.yaml
 images:
   - name: harbor.k8s.scg.skku.ac.kr/library/scg-new-2022-fe
     newTag: prod1
