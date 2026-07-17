@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: be-v2-container
-        image: scgskku/scg-home-be-prod:8726a3a698fb4cf07719c3ab35b335395ec5a6b0-29563903295-1
+        image: scgskku/scg-home-be-prod:8726a3a698fb4cf07719c3ab35b335395ec5a6b0-29563903295-2
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
