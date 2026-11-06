@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend-container
-        image: scgskku/scg-home-fe-prod:44b505d546ab9fb5895ce85c8969a8a4ead40161-42174141519-1
+        image: scgskku/scg-home-fe-prod:3af1eea704004e0cce3ddd90ae3b8dcb6d597e24-42177934436-1
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
